@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="a" x1="960.55" y1="1080.47" x2="959.45" y2="2.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#006a21"/>
+      <stop offset="1" stop-color="#00082a"/>
+    </linearGradient>
+  </defs>
+  <title>Artboard 1</title>
+  <g>
+    <rect x="0.5" y="0.5" width="1919" height="1079" style="fill: url(#a)"/>
+    <path d="M1919,1V1079H1V1H1919m1-1H0V1080H1920V0Z"/>
+  </g>
+</svg>
