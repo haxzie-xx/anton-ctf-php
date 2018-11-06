@@ -30,7 +30,7 @@
 
     .dash-nav {
         display: flex;
-        position: fixed;
+        justify-content: flex-start;
         background-color: rgb(9, 158, 16);
         width: 100%;
         z-index: 99;
@@ -79,11 +79,20 @@
                 }
             }
         }
+
+        .logout {
+            display: inline-block;
+            align-self: center;
+            justify-self: flex-end;
+            margin: 0 20px 0 auto;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.1em;
+        }
     }
 
     .dash-challenge-container {
         display: flex;
-        margin-top: 70px;
         flex-direction: column;
     }
         

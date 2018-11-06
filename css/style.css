@@ -112,6 +112,8 @@ nav {
           padding: 20px 10px 20px 10px; }
           .login-card .tabs ul li a:active {
             color: blue; }
+        .login-card .tabs ul li .active {
+          border-bottom: 2px solid #02212e; }
   .login-card form {
     display: flex;
     flex-direction: column;
@@ -223,7 +225,7 @@ nav {
   height: 100vh; }
   .dash-content .dash-nav {
     display: flex;
-    position: fixed;
+    justify-content: flex-start;
     background-color: #099e10;
     width: 100%;
     z-index: 99;
@@ -258,7 +260,14 @@ nav {
           .dash-content .dash-nav .tabs ul li .active {
             color: white;
             border-bottom: 2px solid #ffffff; }
+    .dash-content .dash-nav .logout {
+      display: inline-block;
+      align-self: center;
+      justify-self: flex-end;
+      margin: 0 20px 0 auto;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.1em; }
   .dash-content .dash-challenge-container {
     display: flex;
-    margin-top: 70px;
     flex-direction: column; }

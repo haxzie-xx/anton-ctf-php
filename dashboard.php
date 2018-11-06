@@ -1,3 +1,6 @@
+<?php 
+    include 'session.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,8 +12,11 @@
 
     if (isset($_GET["p"]) && $_GET["p"] == $LEADERBOARD) {
         $current_page = $LEADERBOARD;
-    } else {
+    } else if (isset($_GET["p"]) && $_GET["p"] == $CHALLENGES){
         $current_page = $CHALLENGES;
+    } else {
+        header('Location: dashboard.php?p=challenges');
+        die();
     }
 ?>
 <body>
@@ -31,6 +37,7 @@
                     ?>
                 </ul>
             </div>
+            <a href="logout.php" class="logout">Logout</a>
         </div>
         <div class="dash-challenge-container">
             <?php 
