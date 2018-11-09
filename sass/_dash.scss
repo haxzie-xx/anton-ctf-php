@@ -17,6 +17,76 @@
     background-color: rgb(17, 22, 21);
     z-index: 99;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    h2 {
+        color: white;
+        text-align: center; 
+    }
+    .nav-username {
+        display: block;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        margin: 0 0 0 0;
+        background-color: rgb(25, 31, 29);
+        
+    }
+
+    .score {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            display: block;
+            text-align: center;
+            color: rgb(255, 174, 0);
+            font-size: 3em;
+
+            &:after {
+                content: 'Score';
+                display: block;
+                font-size: 0.5em;
+                color: #575757;
+            }
+        }
+    }
+
+    .status {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0 0 0;
+        padding: 0;
+
+        .col {
+            width: 50%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            background: rgb(25, 31, 29);
+
+            &:nth-child(1) {
+                border-right: 1px solid #303030;
+                border-left: 2px solid green;
+            }
+
+            h3 {
+                text-align: center;
+                color: green;
+                margin: 10px 10px 10px 10px;
+                padding: 0;
+                font-size: 1.5em;
+            }
+
+            p{
+                text-align: center;
+                color: #575757;
+                margin: 0px 10px 10px 10px;
+            }
+        }
+    }
+
 }
 
 .dash-content {

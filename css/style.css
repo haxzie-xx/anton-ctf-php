@@ -199,6 +199,56 @@ nav {
           content: url("/anton/images/coin.png");
           margin: 5px 5px 0 0; }
 
+.leaderboard {
+  display: flex;
+  flex-direction: column; }
+  .leaderboard h3 {
+    text-decoration: none;
+    display: block;
+    margin: 15px 15px 5px 15px;
+    padding: 0 0 0 5px;
+    color: #111615;
+    font-weight: normal;
+    font-size: 1.2em; }
+    .leaderboard h3:after {
+      display: block;
+      margin: 10px 0 10px 0;
+      content: '';
+      width: 30px;
+      height: 3px;
+      background-color: #099e10; }
+  .leaderboard table {
+    background-color: white;
+    width: 95%;
+    margin: 15px;
+    border-radius: 7px;
+    border: 1px solid #eeeeee;
+    border-collapse: collapse; }
+    .leaderboard table thead {
+      border-bottom: 1px solid #eeeeee; }
+      .leaderboard table thead tr th {
+        padding: 15px; }
+      .leaderboard table thead tr td {
+        text-align: center; }
+    .leaderboard table tbody tr:nth-child(odd) {
+      background: #ffffff;
+      color: black; }
+    .leaderboard table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+      color: black; }
+    .leaderboard table tbody tr:nth-child(1) {
+      background-color: green;
+      color: white; }
+    .leaderboard table tbody tr:nth-child(2) {
+      background-color: #3bb83b; }
+    .leaderboard table tbody tr:nth-child(3) {
+      background-color: #90e490; }
+    .leaderboard table tbody tr:hover {
+      background-color: #e0e0e0; }
+    .leaderboard table tbody tr td {
+      text-align: center;
+      padding: 10px; }
+
 .dash-container {
   position: relative;
   display: flex;
@@ -213,7 +263,56 @@ nav {
   height: 100vh;
   background-color: #111615;
   z-index: 99;
-  position: fixed; }
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  color: white; }
+  .dash-side-nav h2 {
+    color: white;
+    text-align: center; }
+  .dash-side-nav .nav-username {
+    display: block;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    margin: 0 0 0 0;
+    background-color: #191f1d; }
+  .dash-side-nav .score {
+    display: flex;
+    flex-direction: column; }
+    .dash-side-nav .score h1 {
+      display: block;
+      text-align: center;
+      color: #ffae00;
+      font-size: 3em; }
+      .dash-side-nav .score h1:after {
+        content: 'Score';
+        display: block;
+        font-size: 0.5em;
+        color: #575757; }
+  .dash-side-nav .status {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 0 0;
+    padding: 0; }
+    .dash-side-nav .status .col {
+      width: 50%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      background: #191f1d; }
+      .dash-side-nav .status .col:nth-child(1) {
+        border-right: 1px solid #303030;
+        border-left: 2px solid green; }
+      .dash-side-nav .status .col h3 {
+        text-align: center;
+        color: green;
+        margin: 10px 10px 10px 10px;
+        padding: 0;
+        font-size: 1.5em; }
+      .dash-side-nav .status .col p {
+        text-align: center;
+        color: #575757;
+        margin: 0px 10px 10px 10px; }
 
 .dash-content {
   position: relative;

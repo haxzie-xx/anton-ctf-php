@@ -5,7 +5,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login-submit'])) {
         $myEmail = mysqli_real_escape_string($conn,$_POST['email']);
         $myPassword = mysqli_real_escape_string($conn,$_POST['password']); 
-        $sql = "SELECT `id`, `role` FROM `users` WHERE `email` = \"".$myEmail."\" and `password` = \"".$myPassword."\"";
+        $sql = "SELECT `id`, `role`, `name` FROM `users` WHERE `email` = \"".$myEmail."\" and `password` = \"".$myPassword."\"";
         
         if(! $conn ) {
             die('Could not connect: ' . mysqli_error());
@@ -24,6 +24,7 @@
             $_SESSION['login_user'] = $myEmail;
             $_SESSION['role'] = $row['role'];
             $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
             if($row['role'] == 'user') {
                 header('location: dashboard.php');
                 die('Logged in as user');
