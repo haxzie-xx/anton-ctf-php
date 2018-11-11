@@ -2,10 +2,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu'; }
+  font-family: 'Ubuntu';
+  width: 100%; }
 
 body {
   height: 100vh; }
+
+* {
+  outline: 0; }
 
 .background {
   bottom: 0;
@@ -205,7 +209,7 @@ nav {
   .leaderboard h3 {
     text-decoration: none;
     display: block;
-    margin: 15px 15px 5px 15px;
+    margin: 15px 15px 5FIpx 15px;
     padding: 0 0 0 5px;
     color: #111615;
     font-weight: normal;
@@ -370,3 +374,229 @@ nav {
   .dash-content .dash-challenge-container {
     display: flex;
     flex-direction: column; }
+
+.admin-challenges, .admin-categories {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  margin: 120px 0 0 0;
+  padding: auto;
+  justify-content: center;
+  align-items: center; }
+  .admin-challenges .container, .admin-categories .container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; }
+    .admin-challenges .container .toolbar, .admin-categories .container .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin-top: 20px 0 0 0;
+      background-color: #099e10;
+      border-radius: 5px 5px 0 0;
+      box-sizing: border-box;
+      width: 80%; }
+      .admin-challenges .container .toolbar h3, .admin-categories .container .toolbar h3 {
+        display: inline;
+        justify-self: flex-start;
+        margin: 0;
+        color: white; }
+      .admin-challenges .container .toolbar button, .admin-categories .container .toolbar button {
+        background-color: white;
+        padding: 10px;
+        border: 0;
+        border-radius: 5px;
+        justify-self: flex-end;
+        margin: 0;
+        transition: 0.3s all ease-in-out; }
+        .admin-challenges .container .toolbar button:hover, .admin-categories .container .toolbar button:hover {
+          -webkit-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+          cursor: pointer; }
+    .admin-challenges .container table, .admin-categories .container table {
+      width: 80%;
+      box-sizing: border-box;
+      border-collapse: collapse;
+      -webkit-box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75); }
+      .admin-challenges .container table tbody, .admin-categories .container table tbody {
+        width: 100%; }
+        .admin-challenges .container table tbody .head, .admin-categories .container table tbody .head {
+          background-color: #1e2024;
+          color: white; }
+        .admin-challenges .container table tbody tr, .admin-categories .container table tbody tr {
+          width: 100%; }
+          .admin-challenges .container table tbody tr th,
+          .admin-challenges .container table tbody tr td, .admin-categories .container table tbody tr th,
+          .admin-categories .container table tbody tr td {
+            text-align: center;
+            padding: 13px; }
+        .admin-challenges .container table tbody .content, .admin-categories .container table tbody .content {
+          border-left: 1px solid #eeeeee;
+          border-right: 1px solid #eeeeee; }
+          .admin-challenges .container table tbody .content:nth-child(odd), .admin-categories .container table tbody .content:nth-child(odd) {
+            background-color: #e4e2e2; }
+          .admin-challenges .container table tbody .content:nth-child(even), .admin-categories .container table tbody .content:nth-child(even) {
+            background-color: #ffffff; }
+          .admin-challenges .container table tbody .content:last-child, .admin-categories .container table tbody .content:last-child {
+            border-bottom: 1px solid #eeeeee;
+            border-radius: 0px 0px 5px 5px; }
+          .admin-challenges .container table tbody .content:hover, .admin-categories .container table tbody .content:hover {
+            cursor: pointer;
+            background-color: #c7eecd; }
+
+.admin-nav {
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background-color: #1e2024;
+  -webkit-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75); }
+  .admin-nav .nav {
+    display: flex; }
+    .admin-nav .nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 0;
+      margin: 0; }
+      .admin-nav .nav ul li {
+        display: flex;
+        padding: 0;
+        margin: 0; }
+        .admin-nav .nav ul li a {
+          color: #e0e0e0;
+          font-size: 1.1em;
+          text-decoration: none;
+          padding: 25px 25px 25px 25px; }
+          .admin-nav .nav ul li a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white; }
+          .admin-nav .nav ul li a:active {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white; }
+        .admin-nav .nav ul li .active {
+          color: white;
+          border-bottom: 2px solid #ffffff; }
+    .admin-nav .nav .logout {
+      color: #e0e0e0;
+      font-size: 1.1em;
+      text-decoration: none;
+      padding: 25px 25px 25px 25px; }
+
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.336);
+  transition: 0.5s all ease-in-out; }
+  .modal .card {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: auto;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75); }
+    .modal .card .btn-close {
+      background: #06c51054;
+      width: 50px;
+      height: 50px;
+      border: 0;
+      border-radius: 100px;
+      position: fixed;
+      align-self: flex-end;
+      padding: 15px;
+      transition: 0.2s all ease-in-out;
+      outline: none; }
+      .modal .card .btn-close:hover {
+        cursor: pointer;
+        background: #06c50f94; }
+    .modal .card h2 {
+      padding: 10px 10px 10px 10px;
+      margin: 0px 0px 0px 0px;
+      font-weight: normal; }
+      .modal .card h2:after {
+        display: block;
+        margin: 10px 0 10px 0;
+        content: '';
+        width: 30px;
+        height: 3px;
+        background-color: #099e10; }
+    .modal .card form {
+      display: flex;
+      flex-direction: column; }
+      .modal .card form input[type="text"] {
+        border: 2px solid #ffffff;
+        margin: 0px 0px 20px 0px;
+        padding: 15px;
+        background-color: #e5f8ed;
+        border-radius: 5px;
+        font-size: 1.2em; }
+        .modal .card form input[type="text"]:focus {
+          border: 2px solid #099e10; }
+      .modal .card form textarea {
+        border: 2px solid #ffffff;
+        margin: 0px 0px 20px 0px;
+        padding: 15px;
+        background-color: #e5f8ed;
+        border-radius: 5px;
+        font-size: 1.2em;
+        height: 250px;
+        line-height: 1.5em;
+        font-family: 'ubuntu'; }
+        .modal .card form textarea:focus {
+          border: 2px solid #099e10; }
+      .modal .card form .row {
+        display: flex;
+        flex-direction: row; }
+        .modal .card form .row select {
+          border: 2px solid #eeeeee;
+          margin: 0px 0px 20px 0px;
+          padding: 15px;
+          flex-grow: 1;
+          background-color: #e5f8ed;
+          border-radius: 5px;
+          font-size: 1.2em; }
+          .modal .card form .row select:focus {
+            border: 2px solid #099e10; }
+        .modal .card form .row input {
+          border: 1px solid #eeeeee;
+          margin: 0px 0px 20px 10px;
+          padding: 15px;
+          min-width: 100px;
+          flex-grow: 1;
+          background-color: #e5f8ed;
+          border-radius: 5px;
+          font-size: 1.2em; }
+      .modal .card form input[type="submit"] {
+        padding: 15px;
+        border: 0;
+        background-color: #02212e;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 1em;
+        width: 200px;
+        align-self: flex-end; }
+        .modal .card form input[type="submit"]:hover {
+          cursor: pointer; }

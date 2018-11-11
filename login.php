@@ -25,7 +25,7 @@
             $_SESSION['role'] = $row['role'];
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
-            if($row['role'] == 'user') {
+            if(($row['role'] == 'user')) {
                 header('location: dashboard.php');
                 die('Logged in as user');
             } else if (($row['role'] == 'admin')) {
@@ -35,7 +35,7 @@
                 header("location: login.php?p=login#invalid");
                 die("Invalid User Category");
             }
-         }else {
+         } else {
             header("location: login.php?p=login#error");
             echo("Invalid User Category");
             die();

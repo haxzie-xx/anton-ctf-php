@@ -1,0 +1,140 @@
+.modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.336);
+    transition: 0.5s all ease-in-out;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        height: auto;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
+
+        .btn-close {
+            background: #06c51054;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            border-radius: 100px;
+            position: fixed;
+            align-self: flex-end;
+            padding: 15px;
+            transition: 0.2s all ease-in-out;
+            outline: none;
+
+            &:hover {
+                cursor: pointer;
+                background: #06c50f94;
+            }
+        }
+
+        h2 {
+            padding: 10px 10px 10px 10px;
+            margin: 0px 0px 0px 0px;
+            font-weight: normal;
+
+            &:after {
+                display: block;
+                margin: 10px 0 10px 0;
+                content: '';
+                width: 30px;
+                height: 3px;
+                background-color: rgb(9, 158, 16);
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            input[type="text"] {
+                border: 2px solid #ffffff;
+                margin: 0px 0px 20px 0px;
+                padding: 15px;
+                background-color: #e5f8ed;
+                border-radius: 5px;
+                font-size: 1.2em;
+
+                &:focus {
+                    border: 2px solid rgb(9, 158, 16);
+                }
+            }
+
+            textarea {
+                border: 2px solid #ffffff;
+                margin: 0px 0px 20px 0px;
+                padding: 15px;
+                background-color: #e5f8ed;
+                border-radius: 5px;
+                font-size: 1.2em;
+                height: 250px;
+                line-height: 1.5em;
+                font-family: 'ubuntu';
+
+                &:focus {
+                    border: 2px solid rgb(9, 158, 16);
+                }
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+
+                select {
+                    border: 2px solid #eeeeee;
+                    margin: 0px 0px 20px 0px;
+                    padding: 15px;
+                    flex-grow: 1;
+                    background-color: #e5f8ed;
+                    border-radius: 5px;
+                    font-size: 1.2em;
+
+                    &:focus {
+                        border: 2px solid rgb(9, 158, 16);
+                    }
+                }
+
+                input {
+                    border: 1px solid #eeeeee;
+                    margin: 0px 0px 20px 10px;
+                    padding: 15px;
+                    min-width: 100px;
+                    flex-grow: 1;
+                    background-color: #e5f8ed;
+                    border-radius: 5px;
+                    font-size: 1.2em;
+                }
+            }
+
+            input[type="submit"] {
+                padding: 15px;
+                border: 0;
+                background-color: #02212e;
+                border-radius: 5px;
+                color: #ffffff;
+                font-size: 1em;
+                width: 200px;
+                align-self: flex-end;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+}

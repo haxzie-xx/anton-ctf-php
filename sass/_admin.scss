@@ -1,0 +1,60 @@
+@import 'admin/challenges';
+
+.admin-nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    background-color: #1e2024;
+    -webkit-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+
+    .nav {
+        display: flex;
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                
+                a {
+                    color: rgb(224, 224, 224);
+                    font-size: 1.1em;
+                    text-decoration: none;
+                    padding: 25px 25px 25px 25px;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.2);
+                        color: white;
+                    }
+
+                    &:active {
+                        background-color: rgba(0, 0, 0, 0.2);
+                        color: white;
+                    }
+                }
+
+                .active {
+                    color: white;
+                    border-bottom: 2px solid #ffffff;
+                }
+            }
+        }
+
+        .logout {
+            color: rgb(224, 224, 224);
+            font-size: 1.1em;
+            text-decoration: none;
+            padding: 25px 25px 25px 25px;
+        }
+    }
+}
