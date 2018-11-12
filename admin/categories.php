@@ -36,7 +36,7 @@
 </div>
 
 <div id="modal-add-category" class="modal">
-    <div class="card">
+    <div class="modal-card">
         <h2>New Category</h2>
         <form action="admin/controllers/add_category.php" method="POST">
             <input type="text" name="title" placeholder="Category Title"/>

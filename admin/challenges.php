@@ -38,7 +38,7 @@
 </div>
 
 <div id="modal-add-challenge" class="modal">
-    <div class="card">
+    <div class="modal-card">
         <h2>New Challenge</h2>
         <form action="admin/controllers/add_challenge.php" method="POST">
             <input type="text" name="title" placeholder="Challenge Title"/>

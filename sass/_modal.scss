@@ -11,7 +11,7 @@
     background-color: rgba(0, 0, 0, 0.336);
     transition: 0.5s all ease-in-out;
 
-    .card {
+    .modal-card {
         display: flex;
         flex-direction: column;
         width: 700px;
@@ -55,6 +55,19 @@
                 height: 3px;
                 background-color: rgb(9, 158, 16);
             }
+        }
+
+        h3 {
+            padding: 10px 10px 10px 10px;
+            margin: 0px 0px 0px 0px;
+            font-size: 1.3em;
+            font-weight: normal;
+        }
+
+        p {
+            padding: 10px 10px 10px 10px;
+            margin: 0px 0px 10px 0px;
+            font-weight: normal;    
         }
 
         form {

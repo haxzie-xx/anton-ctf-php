@@ -375,7 +375,7 @@ nav {
     display: flex;
     flex-direction: column; }
 
-.admin-challenges, .admin-categories {
+.admin-challenges, .admin-categories, .admin-leaderboard {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -384,14 +384,14 @@ nav {
   padding: auto;
   justify-content: center;
   align-items: center; }
-  .admin-challenges .container, .admin-categories .container {
+  .admin-challenges .container, .admin-categories .container, .admin-leaderboard .container {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%; }
-    .admin-challenges .container .toolbar, .admin-categories .container .toolbar {
+    .admin-challenges .container .toolbar, .admin-categories .container .toolbar, .admin-leaderboard .container .toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -401,12 +401,12 @@ nav {
       border-radius: 5px 5px 0 0;
       box-sizing: border-box;
       width: 80%; }
-      .admin-challenges .container .toolbar h3, .admin-categories .container .toolbar h3 {
+      .admin-challenges .container .toolbar h3, .admin-categories .container .toolbar h3, .admin-leaderboard .container .toolbar h3 {
         display: inline;
         justify-self: flex-start;
         margin: 0;
         color: white; }
-      .admin-challenges .container .toolbar button, .admin-categories .container .toolbar button {
+      .admin-challenges .container .toolbar button, .admin-categories .container .toolbar button, .admin-leaderboard .container .toolbar button {
         background-color: white;
         padding: 10px;
         border: 0;
@@ -414,41 +414,42 @@ nav {
         justify-self: flex-end;
         margin: 0;
         transition: 0.3s all ease-in-out; }
-        .admin-challenges .container .toolbar button:hover, .admin-categories .container .toolbar button:hover {
+        .admin-challenges .container .toolbar button:hover, .admin-categories .container .toolbar button:hover, .admin-leaderboard .container .toolbar button:hover {
           -webkit-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
           cursor: pointer; }
-    .admin-challenges .container table, .admin-categories .container table {
+    .admin-challenges .container table, .admin-categories .container table, .admin-leaderboard .container table {
       width: 80%;
       box-sizing: border-box;
       border-collapse: collapse;
       -webkit-box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
       box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75); }
-      .admin-challenges .container table tbody, .admin-categories .container table tbody {
+      .admin-challenges .container table tbody, .admin-categories .container table tbody, .admin-leaderboard .container table tbody {
         width: 100%; }
-        .admin-challenges .container table tbody .head, .admin-categories .container table tbody .head {
+        .admin-challenges .container table tbody .head, .admin-categories .container table tbody .head, .admin-leaderboard .container table tbody .head {
           background-color: #1e2024;
           color: white; }
-        .admin-challenges .container table tbody tr, .admin-categories .container table tbody tr {
+        .admin-challenges .container table tbody tr, .admin-categories .container table tbody tr, .admin-leaderboard .container table tbody tr {
           width: 100%; }
           .admin-challenges .container table tbody tr th,
           .admin-challenges .container table tbody tr td, .admin-categories .container table tbody tr th,
-          .admin-categories .container table tbody tr td {
+          .admin-categories .container table tbody tr td, .admin-leaderboard .container table tbody tr th,
+          .admin-leaderboard .container table tbody tr td {
             text-align: center;
             padding: 13px; }
-        .admin-challenges .container table tbody .content, .admin-categories .container table tbody .content {
+        .admin-challenges .container table tbody .content, .admin-categories .container table tbody .content, .admin-leaderboard .container table tbody .content {
           border-left: 1px solid #eeeeee;
           border-right: 1px solid #eeeeee; }
-          .admin-challenges .container table tbody .content:nth-child(odd), .admin-categories .container table tbody .content:nth-child(odd) {
+          .admin-challenges .container table tbody .content:nth-child(odd), .admin-categories .container table tbody .content:nth-child(odd), .admin-leaderboard .container table tbody .content:nth-child(odd) {
             background-color: #e4e2e2; }
-          .admin-challenges .container table tbody .content:nth-child(even), .admin-categories .container table tbody .content:nth-child(even) {
+          .admin-challenges .container table tbody .content:nth-child(even), .admin-categories .container table tbody .content:nth-child(even), .admin-leaderboard .container table tbody .content:nth-child(even) {
             background-color: #ffffff; }
-          .admin-challenges .container table tbody .content:last-child, .admin-categories .container table tbody .content:last-child {
+          .admin-challenges .container table tbody .content:last-child, .admin-categories .container table tbody .content:last-child, .admin-leaderboard .container table tbody .content:last-child {
             border-bottom: 1px solid #eeeeee;
             border-radius: 0px 0px 5px 5px; }
-          .admin-challenges .container table tbody .content:hover, .admin-categories .container table tbody .content:hover {
+          .admin-challenges .container table tbody .content:hover, .admin-categories .container table tbody .content:hover, .admin-leaderboard .container table tbody .content:hover {
             cursor: pointer;
             background-color: #c7eecd; }
 
@@ -506,7 +507,7 @@ nav {
   right: 0;
   background-color: rgba(0, 0, 0, 0.336);
   transition: 0.5s all ease-in-out; }
-  .modal .card {
+  .modal .modal-card {
     display: flex;
     flex-direction: column;
     width: 700px;
@@ -518,7 +519,7 @@ nav {
     -webkit-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.75); }
-    .modal .card .btn-close {
+    .modal .modal-card .btn-close {
       background: #06c51054;
       width: 50px;
       height: 50px;
@@ -529,33 +530,42 @@ nav {
       padding: 15px;
       transition: 0.2s all ease-in-out;
       outline: none; }
-      .modal .card .btn-close:hover {
+      .modal .modal-card .btn-close:hover {
         cursor: pointer;
         background: #06c50f94; }
-    .modal .card h2 {
+    .modal .modal-card h2 {
       padding: 10px 10px 10px 10px;
       margin: 0px 0px 0px 0px;
       font-weight: normal; }
-      .modal .card h2:after {
+      .modal .modal-card h2:after {
         display: block;
         margin: 10px 0 10px 0;
         content: '';
         width: 30px;
         height: 3px;
         background-color: #099e10; }
-    .modal .card form {
+    .modal .modal-card h3 {
+      padding: 10px 10px 10px 10px;
+      margin: 0px 0px 0px 0px;
+      font-size: 1.3em;
+      font-weight: normal; }
+    .modal .modal-card p {
+      padding: 10px 10px 10px 10px;
+      margin: 0px 0px 10px 0px;
+      font-weight: normal; }
+    .modal .modal-card form {
       display: flex;
       flex-direction: column; }
-      .modal .card form input[type="text"] {
+      .modal .modal-card form input[type="text"] {
         border: 2px solid #ffffff;
         margin: 0px 0px 20px 0px;
         padding: 15px;
         background-color: #e5f8ed;
         border-radius: 5px;
         font-size: 1.2em; }
-        .modal .card form input[type="text"]:focus {
+        .modal .modal-card form input[type="text"]:focus {
           border: 2px solid #099e10; }
-      .modal .card form textarea {
+      .modal .modal-card form textarea {
         border: 2px solid #ffffff;
         margin: 0px 0px 20px 0px;
         padding: 15px;
@@ -565,12 +575,12 @@ nav {
         height: 250px;
         line-height: 1.5em;
         font-family: 'ubuntu'; }
-        .modal .card form textarea:focus {
+        .modal .modal-card form textarea:focus {
           border: 2px solid #099e10; }
-      .modal .card form .row {
+      .modal .modal-card form .row {
         display: flex;
         flex-direction: row; }
-        .modal .card form .row select {
+        .modal .modal-card form .row select {
           border: 2px solid #eeeeee;
           margin: 0px 0px 20px 0px;
           padding: 15px;
@@ -578,9 +588,9 @@ nav {
           background-color: #e5f8ed;
           border-radius: 5px;
           font-size: 1.2em; }
-          .modal .card form .row select:focus {
+          .modal .modal-card form .row select:focus {
             border: 2px solid #099e10; }
-        .modal .card form .row input {
+        .modal .modal-card form .row input {
           border: 1px solid #eeeeee;
           margin: 0px 0px 20px 10px;
           padding: 15px;
@@ -589,7 +599,7 @@ nav {
           background-color: #e5f8ed;
           border-radius: 5px;
           font-size: 1.2em; }
-      .modal .card form input[type="submit"] {
+      .modal .modal-card form input[type="submit"] {
         padding: 15px;
         border: 0;
         background-color: #02212e;
@@ -598,5 +608,5 @@ nav {
         font-size: 1em;
         width: 200px;
         align-self: flex-end; }
-        .modal .card form input[type="submit"]:hover {
+        .modal .modal-card form input[type="submit"]:hover {
           cursor: pointer; }
