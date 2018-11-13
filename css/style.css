@@ -209,14 +209,14 @@ nav {
   .leaderboard h3 {
     text-decoration: none;
     display: block;
-    margin: 15px 15px 5FIpx 15px;
+    margin: 15px 15px 15px 15px;
     padding: 0 0 0 5px;
     color: #111615;
     font-weight: normal;
     font-size: 1.2em; }
     .leaderboard h3:after {
       display: block;
-      margin: 10px 0 10px 0;
+      margin: 10px 0 0px 0;
       content: '';
       width: 30px;
       height: 3px;
@@ -224,7 +224,7 @@ nav {
   .leaderboard table {
     background-color: white;
     width: 95%;
-    margin: 15px;
+    margin: 10px 15px 15px 15px;
     border-radius: 7px;
     border: 1px solid #eeeeee;
     border-collapse: collapse; }
@@ -610,3 +610,40 @@ nav {
         align-self: flex-end; }
         .modal .modal-card form input[type="submit"]:hover {
           cursor: pointer; }
+
+.toast {
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  bottom: -10;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  transition: 0.5s all ease-in-out; }
+  .toast h3 {
+    display: inline;
+    padding: 15px 20px 15px 20px;
+    background-color: grey;
+    -webkit-box-shadow: 0px 10px 30px -5px rgba(90, 90, 90, 0.75);
+    -moz-box-shadow: 0px 10px 30px -5px rgba(90, 90, 90, 0.75);
+    box-shadow: 0px 10px 30px -5px rgba(90, 90, 90, 0.75);
+    border-radius: 100px;
+    color: white;
+    margin: 20px; }
+
+.t-success {
+  bottom: 0; }
+  .t-success h3 {
+    background-color: green;
+    -webkit-box-shadow: 0px 10px 30px -5px rgba(14, 218, 7, 0.75);
+    -moz-box-shadow: 0px 10px 30px -5px rgba(14, 218, 7, 0.75);
+    box-shadow: 0px 10px 30px -5px rgba(14, 218, 7, 0.75); }
+
+.t-error {
+  bottom: 0; }
+  .t-error h3 {
+    background-color: red;
+    -webkit-box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75);
+    -moz-box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75);
+    box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75); }

@@ -18,30 +18,70 @@ var Modal = {
         btnClose.onclick = function() {
             modal.style.display = "none";
         }
-
     }
 }
 
-var ChallengeModal = {
+class ChallengeModal {
 
-    init: function(modal_id, card_class, close_id) {
-        let triggers = document.getElementsByClassName(card_class);
-        const modal = document.getElementById(modal_id);
-        let btnClose = document.getElementById(close_id);
+    constructor(modal_id, card_class, close_id, solve_id) {
+        this.triggers = document.getElementsByClassName(card_class);
+        this.modal = document.getElementById(modal_id);
+        this.btnClose = document.getElementById(close_id);
+        this.btnSolve = document.getElementById(solve_id);
+        this.solveForm = document.getElementById("solve-form");
+        this.textFlag = document.getElementById("text-flag");
 
-        for (let i = 0; i < triggers.length; i++) {
-            triggers[i].onclick = function() {
-                modal.style.display = "flex";
-                let challenge_id = triggers[i].dataset.id;
+        for (let i = 0; i < this.triggers.length; i++) {
+            this.triggers[i].onclick = () => {
+                this.modal.style.display = "flex";
+                this.solveForm.setAttribute("data-cid", this.triggers[i].getAttribute("data-id"));
+                console.log("Challenge Id: "+this.solveForm.dataset.cid);
+                let challenge_id = this.triggers[i].dataset.id;
                 loadData(modal_id, challenge_id);
+
             }
         }
-
-        btnClose.onclick = function() {
-            console.log("Closing Modal");
-            modal.style.display = "none";
-        }
     }
+
+    init(userid){
+    
+        this.userid = userid;
+        console.log("UserID : "+userid);
+
+        this.solveForm.addEventListener("submit", (e) => {
+            if (e.preventDefault) e.preventDefault();
+            
+            let flag = this.textFlag.value;
+            let params = {
+                flag: flag,
+                cid: this.solveForm.dataset.cid,
+                userid: this.userid
+            };
+            console.log("Params: "+JSON.stringify(params));
+
+            axios.post('solve_challenge.php', params).then((response) => {
+                //code here 
+                console.log(JSON.stringify(response));
+                if (response.status === 200) {
+                    this.textFlag.style.color = "green";
+                    myToast.showSuccess(response.message, function() { location.reload(); });
+                } else {
+                    this.textFlag.style.color = "red";
+                    myToast.showError(response.message, null);
+                }
+                
+            });
+            // You must return false to prevent the default form behavior
+            return false;
+        });
+
+        this.btnClose.onclick = () => {
+            console.log("Closing Modal");
+            this.modal.style.display = "none";
+        }
+
+    }
+
 }
 
 function postData(url = ``, data = {}) {

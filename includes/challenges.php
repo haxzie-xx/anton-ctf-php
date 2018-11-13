@@ -40,7 +40,7 @@
 <div id="modal-display-challenge" class="modal">
     <div class="modal-card">
         <h2 id="challenge-id">Challenge </h2>
-        <form action="solve_challenge.php" method="POST">
+        <form id="solve-form" action="solve_challenge.php" method="POST">
             <h3 id="challenge-name" class="modal-title">Challenge Title</h3>
             <p id="challenge-desc" >
                 Lorem ipsum dolor sit amet conspectuas Lorem ipsum dolor sit amet conspectuas Lorem ipsum dolor sit amet conspectuas Lorem ipsum dolor sit amet conspectuasLorem ipsum dolor sit amet conspectuasLorem ipsum dolor sit amet conspectuas
@@ -48,7 +48,7 @@
             <div class="row">
                 <input type="text" id="text-flag" placeholder="Flag" name="flag" />
             </div>
-            <input type="submit" name="add_challenge" value="SOLVE">
+            <input type="submit" id="btn-solve" name="add_challenge" value="SOLVE">
         </form>
         <button id="btn-modal-close" class="btn-close"><img src="images/close.svg"/></button>
     </div>
@@ -57,5 +57,6 @@
 <script src="js/axios.min.js"></script>
 <script src="js/modal.js"></script>
 <script>
-    ChallengeModal.init("modal-display-challenge", "card", "btn-modal-close");
+    let challengeModal = new ChallengeModal("modal-display-challenge", "card", "btn-modal-close", "btn-solve");
+    challengeModal.init(<?php echo "\"$login_user_id\"" ?>);
 </script>

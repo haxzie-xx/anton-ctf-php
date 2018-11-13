@@ -82,5 +82,13 @@
     
 </div>
 
+<div class="toast" id="toast">
+    <h3 id="message">Error</h3>
+</div>
+<script>
+let myToast = new Toast();
+myToast.init(document.getElementById("toast")); 
+</script>
+
 </body>
 </html>
