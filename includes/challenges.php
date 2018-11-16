@@ -1,9 +1,16 @@
 <div class="challenge-category">
 
         <?php 
+
+            $sql = "select c_id from scoreboard where user_id = ".$login_user_id;
+            $result = mysqli_query($conn, $sql) or die(mysqli_error());
+            $solved_id = array();
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                array_push($solved_id, $row['c_id']);
+            }
+
             $sql = "select ch.id, ch.title, ch.score, cat.name as cat_name from challenges as ch, category as cat where ch.cat_id = cat.cat_id order by cat.name";
             $result = mysqli_query($conn, $sql) or die(mysqli_error());
-            if (!$result) echo "ERROR";
             $count = mysqli_num_rows($result);
             $prev_cat_name = "";
             
@@ -23,10 +30,10 @@
                         echo "<div class='card-container'>";
                     }
 
-
+                    $isSolvedClass = in_array($row["id"], $solved_id) ? "solved" : "points";
                     echo "<div class='card' data-id='".$row["id"]."'>";
                     echo "<p>".$row["title"]."</p>";
-                    echo "<p class='points'>".$row["score"]."</p>";
+                    echo "<p class='$isSolvedClass'>".$row["score"]."</p>";
                     echo "</div>";
                 }
 
@@ -54,7 +61,6 @@
     </div>
 </div>
 
-<script src="js/axios.min.js"></script>
 <script src="js/modal.js"></script>
 <script>
     let challengeModal = new ChallengeModal("modal-display-challenge", "card", "btn-modal-close", "btn-solve");

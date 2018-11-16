@@ -26,20 +26,60 @@
 
 <body>
 
+<?php 
+    $sql = "select @a:=@a+1 as rank, u.id as user_id, count(sb.c_id) as solved, sum(ch.score) as score from (SELECT @a:= 0) AS a, users as u, challenges as ch, scoreboard as sb where sb.c_id = ch.id and sb.user_id = u.id group by sb.user_id order by score";
+    $result = mysqli_query($conn, $sql) or die(mysqli_error());
+    $count = mysqli_num_rows($result);
+
+    $user_score = 0;
+    $user_rank = 0;
+    $user_solve = 0;
+
+    for ($i = 0; $i < $count; $i++) {
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        if ($row['user_id'] == $login_user_id) {
+            $user_score = $row['score'];
+            $user_solve = $row['solved'];
+            $user_rank = $row['rank'];
+
+            break;
+        }
+    }
+
+    $users_count = 0;
+    $challenges_count = 0;
+
+    $sql = "select count(u.id) as u_count from  users u";
+    $result = mysqli_query($conn, $sql) or die(mysqli_error());
+    $count = mysqli_num_rows($result);
+    if ($count == 1) {
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $users_count = $row['u_count'];
+    }
+
+    $sql = "select count(ch.id) as ch_count from  challenges ch";
+    $result = mysqli_query($conn, $sql) or die(mysqli_error());
+    $count = mysqli_num_rows($result);
+    if ($count == 1) {
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $challenges_count = $row['ch_count'];
+    }
+
+?>
 <div class="dash-container">
     <div class="dash-side-nav">
         <h2>Anton CTF</h2>
         <p class="nav-username"><?php echo $login_username ?></p>
         <div class="score">
-            <h1 class="score">0</h1>
+            <h1 class="score"><?php echo $user_score ?></h1>
         </div>
         <div class="status">
             <div class="col">
-                <h3>25/50</h3>
+                <h3><?php echo "$user_solve / $challenges_count" ?></h3>
                 <p>Solved</p>
             </div>
             <div class="col">
-                <h3>30/100</h3>
+                <h3><?php echo "$user_rank / $users_count" ?></h3>
                 <p>Rank</p>
             </div>
         </div>

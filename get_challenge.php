@@ -1,9 +1,20 @@
 <?php 
     include 'config.php';
 
-    if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['cid'])) {
+    $_POST = json_decode(file_get_contents("php://input"),TRUE);
 
-        $sql = "select title, description, score from challenges where id = ".$_GET['cid'].";";
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cid']) && isset($_POST['userid'])) {
+
+        $user_id = $_POST['userid'];
+        $challenge_id = $_POST['cid'];
+
+
+        $sql = "select s_id from scoreboard where user_id = $user_id and c_id = $challenge_id";
+        $result = mysqli_query($conn, $sql) or die(mysqli_error());
+        $count = mysqli_num_rows($result);
+        $isSolved = $count != 0? true: false;
+
+        $sql = "select title, description, score from challenges where id = ".$_POST['cid'].";";
         $result = mysqli_query($conn, $sql) or die(mysqli_error());
         if (!$result) echo "ERROR";
         $count = mysqli_num_rows($result);
@@ -16,6 +27,7 @@
             $obj->title = $row["title"];
             $obj->description = $row["description"];
             $obj->score = $row["score"];
+            $obj->isSolved = $isSolved;
 
             echo json_encode($obj);
             die();

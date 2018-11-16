@@ -37,15 +37,20 @@
             max-width: 250px;
             min-width: 200px;
             background-color: white;
-            border-radius: 3px;
+            border-radius: 5px;
             margin: 5px 5px 10px 5px;
-            border: 1px solid #e6e6e6;
             transition: 0.5s all ease-in-out;
+            cursor: pointer;
+            -webkit-box-shadow: 0px 2px 10x -5px rgba(0, 0, 0, 0.45);
+            -moz-box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45);
+            box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45);
+
+
 
             &:hover {
-                -webkit-box-shadow: 0px 3px 10px -6px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 3px 10px -6px rgba(0,0,0,0.75);
-                box-shadow: 0px 3px 10px -6px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 0px 5px 20px -6px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 5px 20px -6px rgba(0,0,0,0.75);
+                box-shadow: 0px 5px 20px -6px rgba(0,0,0,0.75);
             }
 
             p {
@@ -69,6 +74,22 @@
 
                 &:before {
                     content: url('/anton/images/coin.png');
+                    margin: 5px 5px 0 0;
+                }
+            }
+
+            .solved {
+                color: rgb(9, 158, 16);
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0px;
+                padding: 0px 10px 10px 10px;
+                text-align: center;
+
+                &:before {
+                    content: url('/anton/images/checked.png');
                     margin: 5px 5px 0 0;
                 }
             }

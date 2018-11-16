@@ -12,17 +12,17 @@
             </tr>
 
             <?php 
-                $sql = "select @a:=@a+1 sl_no, ch.id, ch.title, ch.score, cat.name from (SELECT @a:= 0) AS a, challenges ch, category cat where ch.cat_id = cat.cat_id order by ch.id";
+
+                $sql = "select @a:=@a+1 as rank, u.name as name, count(sb.c_id) as solved, sum(ch.score) as score from (SELECT @a:= 0) AS a, users as u, challenges as ch, scoreboard as sb where sb.c_id = ch.id and sb.user_id = u.id group by sb.user_id order by rank asc";
                 $result = mysqli_query($conn, $sql) or die(mysqli_error());
-                if (!$result) echo "ERROR";
                 $count = mysqli_num_rows($result);
                 if ($count > 0) {
                     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         echo "<tr class='content'>";
-                        echo "<td>".$row["sl_no"]."</td>";
-                        echo "<td>".$row["title"]."</td>";
+                        echo "<td>".$row["rank"]."</td>";
                         echo "<td>".$row["name"]."</td>";
                         echo "<td>".$row["score"]."</td>";
+                        echo "<td>".$row["solved"]."</td>";
                         echo "</tr>";
                     }
 

@@ -175,14 +175,17 @@ nav {
       max-width: 250px;
       min-width: 200px;
       background-color: white;
-      border-radius: 3px;
+      border-radius: 5px;
       margin: 5px 5px 10px 5px;
-      border: 1px solid #e6e6e6;
-      transition: 0.5s all ease-in-out; }
+      transition: 0.5s all ease-in-out;
+      cursor: pointer;
+      -webkit-box-shadow: 0px 2px 10x -5px rgba(0, 0, 0, 0.45);
+      -moz-box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45);
+      box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45); }
       .challenge-category .card-container .card:hover {
-        -webkit-box-shadow: 0px 3px 10px -6px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 3px 10px -6px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 3px 10px -6px rgba(0, 0, 0, 0.75); }
+        -webkit-box-shadow: 0px 5px 20px -6px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 5px 20px -6px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 5px 20px -6px rgba(0, 0, 0, 0.75); }
       .challenge-category .card-container .card p {
         padding: 20px 20px 20px 20px;
         margin: 0px 0px 10px 0px;
@@ -201,6 +204,18 @@ nav {
         text-align: center; }
         .challenge-category .card-container .card .points:before {
           content: url("/anton/images/coin.png");
+          margin: 5px 5px 0 0; }
+      .challenge-category .card-container .card .solved {
+        color: #099e10;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px 10px 10px 10px;
+        text-align: center; }
+        .challenge-category .card-container .card .solved:before {
+          content: url("/anton/images/checked.png");
           margin: 5px 5px 0 0; }
 
 .leaderboard {
@@ -227,7 +242,10 @@ nav {
     margin: 10px 15px 15px 15px;
     border-radius: 7px;
     border: 1px solid #eeeeee;
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    -webkit-box-shadow: 0px 2px 10x -5px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45); }
     .leaderboard table thead {
       border-bottom: 1px solid #eeeeee; }
       .leaderboard table thead tr th {
@@ -453,6 +471,105 @@ nav {
             cursor: pointer;
             background-color: #c7eecd; }
 
+.admin-dashboard {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  margin: 120px 0 0 0;
+  padding: auto;
+  justify-content: center;
+  align-items: center; }
+  .admin-dashboard .dash-row {
+    display: flex;
+    flex-direction: row;
+    width: 80%; }
+    .admin-dashboard .dash-row .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background-color: white;
+      margin: 10px;
+      border-radius: 5px;
+      flex-grow: 1;
+      -webkit-box-shadow: 0px 2px 10x -5px rgba(0, 0, 0, 0.45);
+      -moz-box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45);
+      box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45); }
+      .admin-dashboard .dash-row .col h1 {
+        font-size: 3em;
+        color: #06c510;
+        margin: 10px; }
+      .admin-dashboard .dash-row .col h3 {
+        color: #7a7a7a; }
+  .admin-dashboard .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px; }
+    .admin-dashboard .container .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin: 20px 10px 0px 10px;
+      background-color: #099e10;
+      border-radius: 5px 5px 0 0;
+      box-sizing: border-box;
+      width: 80%; }
+      .admin-dashboard .container .toolbar h3 {
+        display: inline;
+        justify-self: flex-start;
+        margin: 0;
+        color: white; }
+      .admin-dashboard .container .toolbar button {
+        background-color: white;
+        padding: 10px;
+        border: 0;
+        border-radius: 5px;
+        justify-self: flex-end;
+        margin: 0;
+        transition: 0.3s all ease-in-out; }
+        .admin-dashboard .container .toolbar button:hover {
+          -webkit-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 30px -6px rgba(0, 0, 0, 0.75);
+          cursor: pointer; }
+    .admin-dashboard .container table {
+      width: 80%;
+      box-sizing: border-box;
+      border-collapse: collapse;
+      -webkit-box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75); }
+      .admin-dashboard .container table tbody {
+        width: 100%; }
+        .admin-dashboard .container table tbody .head {
+          background-color: #1e2024;
+          color: white; }
+        .admin-dashboard .container table tbody tr {
+          width: 100%; }
+          .admin-dashboard .container table tbody tr th,
+          .admin-dashboard .container table tbody tr td {
+            text-align: center;
+            padding: 13px; }
+        .admin-dashboard .container table tbody .content {
+          border-left: 1px solid #eeeeee;
+          border-right: 1px solid #eeeeee; }
+          .admin-dashboard .container table tbody .content:nth-child(odd) {
+            background-color: #e4e2e2; }
+          .admin-dashboard .container table tbody .content:nth-child(even) {
+            background-color: #ffffff; }
+          .admin-dashboard .container table tbody .content:last-child {
+            border-bottom: 1px solid #eeeeee;
+            border-radius: 0px 0px 5px 5px; }
+          .admin-dashboard .container table tbody .content:hover {
+            cursor: pointer;
+            background-color: #c7eecd; }
+
 .admin-nav {
   display: block;
   position: fixed;
@@ -613,14 +730,14 @@ nav {
 
 .toast {
   position: absolute;
-  display: flex;
+  display: none;
   z-index: 999;
   bottom: -10;
   width: 100%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  transition: 0.5s all ease-in-out; }
+  transition: 1s all ease-in-out; }
   .toast h3 {
     display: inline;
     padding: 15px 20px 15px 20px;
@@ -633,7 +750,8 @@ nav {
     margin: 20px; }
 
 .t-success {
-  bottom: 0; }
+  bottom: 0;
+  display: flex; }
   .t-success h3 {
     background-color: green;
     -webkit-box-shadow: 0px 10px 30px -5px rgba(14, 218, 7, 0.75);
@@ -641,9 +759,78 @@ nav {
     box-shadow: 0px 10px 30px -5px rgba(14, 218, 7, 0.75); }
 
 .t-error {
-  bottom: 0; }
+  bottom: 0;
+  display: flex; }
   .t-error h3 {
     background-color: red;
     -webkit-box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75);
     -moz-box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75);
     box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75); }
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-self: center;
+  justify-self: center; }
+  .settings h3 {
+    text-decoration: none;
+    display: block;
+    margin: 15px 15px 15px 15px;
+    padding: 0 0 0 5px;
+    color: #111615;
+    font-weight: normal;
+    font-size: 1.2em; }
+    .settings h3:after {
+      display: block;
+      margin: 10px 0 0px 0;
+      content: '';
+      width: 30px;
+      height: 3px;
+      background-color: #099e10; }
+  .settings form {
+    margin: 20px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-shadow: 0px 2px 10x -5px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.45); }
+    .settings form label {
+      font-size: 1.1em;
+      padding: 5px;
+      color: #8d8d8d; }
+    .settings form input[type="text"] {
+      border: 2px solid #ffffff;
+      margin: 0px 0px 10px 0px;
+      padding: 15px;
+      background-color: #e5f8ed;
+      border-radius: 5px;
+      font-size: 1em; }
+      .settings form input[type="text"]:focus {
+        border: 2px solid #099e10; }
+    .settings form textarea {
+      border: 2px solid #ffffff;
+      margin: 0px 0px 20px 0px;
+      padding: 10px;
+      background-color: #e5f8ed;
+      border-radius: 5px;
+      font-size: 1em;
+      height: 250px;
+      line-height: 1.5em;
+      font-family: 'ubuntu'; }
+      .settings form textarea:focus {
+        border: 2px solid #099e10; }
+    .settings form input[type="submit"] {
+      padding: 15px;
+      border: 0;
+      background-color: #02212e;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 1em;
+      width: 200px;
+      align-self: flex-end; }
+      .settings form input[type="submit"]:hover {
+        cursor: pointer; }

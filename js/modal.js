@@ -24,6 +24,7 @@ var Modal = {
 class ChallengeModal {
 
     constructor(modal_id, card_class, close_id, solve_id) {
+
         this.triggers = document.getElementsByClassName(card_class);
         this.modal = document.getElementById(modal_id);
         this.btnClose = document.getElementById(close_id);
@@ -37,14 +38,12 @@ class ChallengeModal {
                 this.solveForm.setAttribute("data-cid", this.triggers[i].getAttribute("data-id"));
                 console.log("Challenge Id: "+this.solveForm.dataset.cid);
                 let challenge_id = this.triggers[i].dataset.id;
-                loadData(modal_id, challenge_id);
-
+                loadData(modal_id, challenge_id, this.userid);
             }
         }
     }
 
     init(userid){
-    
         this.userid = userid;
         console.log("UserID : "+userid);
 
@@ -84,25 +83,8 @@ class ChallengeModal {
 
 }
 
-function postData(url = ``, data = {}) {
-    // Default options are marked with *
-      return fetch(url, {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, cors, *same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-              "Content-Type": "application/json; charset=utf-8",
-              // "Content-Type": "application/x-www-form-urlencoded",
-          },
-          redirect: "follow", // manual, *follow, error
-          referrer: "no-referrer", // no-referrer, *client
-          body: JSON.stringify(data), // body data type must match "Content-Type" header
-      })
-      .then(response => response.json()); // parses response to JSON
-}
 
-function loadData (modal_id, challenge_id) {
+function loadData (modal_id, challenge_id, user_id) {
     //TODO Create network request to fetch challenge details
     console.log("Opening "+modal_id+" for #"+challenge_id);
     let challenge_title = document.getElementById("challenge-id");
@@ -111,20 +93,32 @@ function loadData (modal_id, challenge_id) {
     let challenge_name = document.getElementById("challenge-name");
     let challenge_desc = document.getElementById("challenge-desc");
     let challenge_flag = document.getElementById("text-flag");
+    let btnSolve = document.getElementById("btn-solve");
 
     challenge_name.innerHTML = "";
     challenge_desc.innerHTML = "";
     challenge_flag.value = "";
 
 
-    fetch("get_challenge.php?cid="+challenge_id)
+    let params = {
+        cid: challenge_id,
+        userid: user_id
+    };
+    axios.post("get_challenge.php", params)
     .then(function(response) {
-        return response.json();
-    })
-    .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
+        console.log(JSON.stringify(response));
 
-        challenge_name.innerHTML = myJson.title;
-        challenge_desc.innerHTML = myJson.description;
+        challenge_name.innerHTML = response.title;
+        challenge_desc.innerHTML = response.description;
+
+        if (response.isSolved.toString() === "true") {
+            btnSolve.style.display = "none";
+            challenge_flag.style.display = "none";
+        } else {
+            btnSolve.style.display = "block";
+            challenge_flag.style.display = "block";
+        }
     });
+    //fetch("get_challenge.php?cid="+challenge_id)
+    
 }

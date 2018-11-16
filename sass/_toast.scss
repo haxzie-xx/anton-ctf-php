@@ -1,13 +1,13 @@
 .toast {
     position: absolute;
-    display: flex;
+    display: none;
     z-index: 999;
     bottom: -10;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    transition: 0.5s all ease-in-out;
+    transition: 1s all ease-in-out;
 
     h3 {
         display: inline;
@@ -25,7 +25,7 @@
 
 .t-success {
     bottom: 0;
-
+    display: flex;
     h3 {
         background-color: green;
         -webkit-box-shadow: 0px 10px 30px -5px rgba(14, 218, 7, 0.75);
@@ -36,6 +36,8 @@
 
 .t-error {
     bottom: 0;
+    display: flex;
+
     h3 {
         background-color: red;
         -webkit-box-shadow: 0px 10px 30px -5px rgba(230, 7, 7, 0.75);
