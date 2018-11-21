@@ -1,11 +1,35 @@
 <div class="admin-leaderboard">
     <div class="container">
         <div class="toolbar">
-            <h3>Settings</h3>
-			<table>
-
-			</table>
+            <h3>User Queries</h3>
         </div>
+        <table>
+            <tr class="head">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+
+            <?php 
+
+                $sql = "select id,name,email,message from visitors";
+                $result = mysqli_query($conn, $sql) or die(mysqli_error());
+                $count = mysqli_num_rows($result);
+                if ($count > 0) {
+                    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                        echo "<tr class='content'>";
+                        echo "<td>".$row["id"]."</td>";
+                        echo "<td>".$row["name"]."</td>";
+                        echo "<td>".$row["email"]."</td>";
+                        echo "<td>".$row["message"]."</td>";
+                        echo "</tr>";
+                    }
+
+                }
+
+            ?>
+        </table>
     </div>
 
 </div>

@@ -1,0 +1,73 @@
+body{
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	background: linear-gradient(rgba(0,0,50,0.5),rgba(0,0,50,0.5)),url("../images/bg.svg");
+	background-size: cover;
+	background-position: top;
+	font-family: sans-serif;
+}
+
+h1{
+	color: #de4624;
+	font-size: 36px;
+	line-height: 40px;
+	margin: 1em 0 .6em 0;
+	font-weight: bold;
+	font-family: 'Hammersmith One', sans-serif;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+	position: relative;
+
+}
+h2{
+	color: #cab8b2;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.contact-title
+{
+	margin-top: 100px;
+	color: #fff;
+	text-transform: uppercase;
+	transition: all 4s ease-in-out;
+}
+.contact-title h1{
+	font-size:32px;
+	line-height: 10px;
+}
+.contact-title h2{
+	font-size: 16px;
+}
+form{
+	margin-top: 50px;
+	transition: all 4s ease-in-out;
+}
+.form-control{
+	width: 600px;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom:1px solid gray;
+	color:#fff;
+	font-size: 18px;
+	margin-bottom:16px;
+}
+
+input{
+	height: 45px;
+}
+form .submit{
+	background:#ff5722;
+	border-color:transparent;
+	color:#fff;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing:2px;
+	height: 50px;
+	margin-top:20px;
+}
+form .submit:hover{
+	background-color:#f44336;
+	cursor: pointer;
+}
