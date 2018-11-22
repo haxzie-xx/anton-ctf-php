@@ -143,14 +143,36 @@ nav {
         flex-direction: column;
         padding: 15px;
 
-        input[type="text"], input[type="password"] {
-            border: 0;
+        input[type="text"], input[type="email"], input[type="password"] {
+            border: 2px solid #ffffff;
             margin: 0px 0px 20px 0px;
             padding: 15px;
-            background-color: #c0dbf1;
+            background-color: #e5f8ed;
             border-radius: 5px;
             font-size: 1.2em;
+
+            &:focus {
+                border: 2px solid rgb(9, 158, 16);
+            }
         }
+
+        textarea {
+            border: 2px solid #ffffff;
+            margin: 0px 0px 20px 0px;
+            padding: 15px;
+            background-color: #e5f8ed;
+            border-radius: 5px;
+            font-size: 1.2em;
+            height: 250px;
+            line-height: 1.5em;
+            font-family: 'ubuntu';
+
+            &:focus {
+                border: 2px solid rgb(9, 158, 16);
+            }
+        }
+
+        
 
         input[type="submit"] {
             padding: 15px;

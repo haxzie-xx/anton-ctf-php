@@ -83,11 +83,9 @@
                 <p>Rank</p>
             </div>
         </div>
-		<div class="contacts">
-				</br>
-				</br>
-			  <p align="center"><a href="about-us.html" style="color:white">About</a></p>
-			  <p align="center"><a href="contact-us.html" style="color:white">Contact Us</a></p>
+		<div class="links">
+			    <a href="about-us.html">About</a>
+			    <a href="contact-us.php">Contact Us</a>
 		</div>
     </div>
     <div class="dash-content">

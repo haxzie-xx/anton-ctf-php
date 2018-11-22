@@ -87,6 +87,20 @@
         }
     }
 
+    .links {
+        margin-top: 10px;
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            &:hover {
+                background-color: #2e2e2e;
+                border-left: 2px solid green;
+            }
+        }
+    }
+
 }
 
 .dash-content {

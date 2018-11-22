@@ -1,7 +1,8 @@
 <html>
 <head>
-	<title> Contact us </title>
-	<link rel="stylesheet" type="text/css" media="screen" href="css/style1.css">
+	<?php 
+    include 'includes/header.php';
+	?>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 		<br>
 			<textarea name="message" class="form-control" placeholder="Message" row="4" required></textarea>
 			<br>
-			<input type="submit" class="form-control submit" value="SEND MESSAGE">
+			<input type="submit" class="form-control submit" name="submit-message" value="SEND MESSAGE">
 		</form>
 		<p><a href="dashboard.php?p=challenges" style="color:white">Home</a> &nbsp <a href="about-us.html" style="color:white">About Us</a></</p>
 		

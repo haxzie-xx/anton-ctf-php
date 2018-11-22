@@ -122,13 +122,27 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 15px; }
-    .login-card form input[type="text"], .login-card form input[type="password"] {
-      border: 0;
+    .login-card form input[type="text"], .login-card form input[type="email"], .login-card form input[type="password"] {
+      border: 2px solid #ffffff;
       margin: 0px 0px 20px 0px;
       padding: 15px;
-      background-color: #c0dbf1;
+      background-color: #e5f8ed;
       border-radius: 5px;
       font-size: 1.2em; }
+      .login-card form input[type="text"]:focus, .login-card form input[type="email"]:focus, .login-card form input[type="password"]:focus {
+        border: 2px solid #099e10; }
+    .login-card form textarea {
+      border: 2px solid #ffffff;
+      margin: 0px 0px 20px 0px;
+      padding: 15px;
+      background-color: #e5f8ed;
+      border-radius: 5px;
+      font-size: 1.2em;
+      height: 250px;
+      line-height: 1.5em;
+      font-family: 'ubuntu'; }
+      .login-card form textarea:focus {
+        border: 2px solid #099e10; }
     .login-card form input[type="submit"] {
       padding: 15px;
       border: 0;
@@ -335,6 +349,16 @@ nav {
         text-align: center;
         color: #575757;
         margin: 0px 10px 10px 10px; }
+  .dash-side-nav .links {
+    margin-top: 10px; }
+    .dash-side-nav .links a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 15px; }
+      .dash-side-nav .links a:hover {
+        background-color: #2e2e2e;
+        border-left: 2px solid green; }
 
 .dash-content {
   position: relative;
