@@ -50,10 +50,9 @@
         <form id="solve-form" action="solve_challenge.php" method="POST">
             <h3 id="challenge-name" class="modal-title">Challenge Title</h3>
             <p id="challenge-desc" >
-                Lorem ipsum dolor sit amet conspectuas Lorem ipsum dolor sit amet conspectuas Lorem ipsum dolor sit amet conspectuas Lorem ipsum dolor sit amet conspectuasLorem ipsum dolor sit amet conspectuasLorem ipsum dolor sit amet conspectuas
             </p>
             <div class="row">
-                <input type="text" id="text-flag" placeholder="Flag" name="flag" />
+                <input type="text" id="text-flag" placeholder="Flag"  autocomplete="off" name="flag" />
             </div>
             <input type="submit" id="btn-solve" name="add_challenge" value="SOLVE">
         </form>

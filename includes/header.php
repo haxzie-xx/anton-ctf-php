@@ -7,4 +7,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="js/main.js"></script>
     <script src="js/axios.min.js"></script>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+
 </head>

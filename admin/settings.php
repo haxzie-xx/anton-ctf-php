@@ -1,46 +1,42 @@
 <div class="admin-leaderboard">
     <div class="container">
-        <div class="toolbar">
-            <h3>Settings</h3>
-			<table>
+    <div class="settings">
+    
+    <h3>Settings</h3>
+    <form action="includes/edit_profile.php" method="POST">
+        <label>Full Name</label>
+        <input type="text" name="username" value="<?php echo $login_username ?>">
+        <input type="submit" name="change-name" value="change">
+    </form>
+    <form id="form-password" action="includes/edit_profile.php" method="POST">
+        <label>Password</label>
+        <input type="text" name="old-password" placeholder="Old Password">
+        <input type="text" id="pswd1" name="new-password" placeholder="New Password">
+        <input type="text" id="pswd2" placeholder="Retype new Password">
+        <input type="submit" name="change-password" value="change">
+    </form>
 
-			</table>
-        </div>
+    <script>
+        let form = document.getElementById('form-password');
+        form.addEventListener('submit', (e) => {
+
+            e.preventDefault();
+
+            let pswd1 = document.getElementById('pswd1');
+            let pswd2 = document.getElementById('pswd2');
+            let p1 = pswd1.value.trim();
+            let p2 = pswd2.value.trim();
+            console.log(p1);
+            console.log(p2);
+            if (p1 !== p2) {
+                myToast.showError("Passwords doesn't match", null);
+                return false;
+            } else {
+                return true;
+            }
+        });
+    </script>
+</div>
     </div>
 
 </div>
-
-<div id="modal-add-challenge" class="modal">
-    <div class="modal-card">
-        <h2>New Challenge</h2>
-        <form action="admin/controllers/add_challenge.php" method="POST">
-            <input type="text" name="title" placeholder="Challenge Title"/>
-            <textarea name="description" placeholder="Challenge Description"></textarea>
-            <div class="row">
-                <select name="cat_id">
-                    <option disabled selected>Choose category</option>
-                    <?php 
-                        $sql = "select cat.cat_id, cat.name from category cat order by cat.cat_id";
-                        $result = mysqli_query($conn, $sql) or die(mysqli_error());
-                        if (!$result) echo "ERROR";
-                        $count = mysqli_num_rows($result);
-                        if ($count > 0) {
-                            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                                echo "<option value=\"".$row["cat_id"]."\">".$row["name"]."</option>";
-                            }
-                        }
-                    ?>
-                </select>
-                <input type="text" placeholder="Score" name="score" />
-                <input type="text" placeholder="Flag" name="flag" />
-            </div>
-            <input type="submit" name="add_challenge" value="CREATE">
-        </form>
-        <button id="btn-modal-close"class="btn-close"><img src="images/close.svg"/></button>
-    </div>
-</div>
-
-<script src="js/modal.js"></script>
-<script>
-    Modal.init("modal-add-challenge", "btn-add-challenge", "btn-modal-close");
-</script>
