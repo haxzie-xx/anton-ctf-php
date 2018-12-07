@@ -2,6 +2,8 @@
 
 This is a simple CTF platform built using PHP. It contains basic features like, adding categories, challenges, leaderboard etc. This is far from perfect, any contributions on improving code quality and features are welcomed.
 
+![dash](https://github.com/haxzie/anton-ctf-php/raw/master/images/Screenshot%20from%202018-12-03%2012-21-00.png)
+![admin](https://github.com/haxzie/anton-ctf-php/raw/master/images/Screenshot%20from%202018-12-03%2012-20-09.png)
 ## SETUP
 Clone the repository to your local machine. Hit big green button on the top right to download the project as zip. Extract the contents.  
 If you are using windows, u need to install [XAMPP](https://www.apachefriends.org/download.html) You can use the same for linux too, else you gotta setup a [lamp server](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04) in your linux system.
